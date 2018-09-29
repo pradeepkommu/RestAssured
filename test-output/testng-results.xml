@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="2062" started-at="2018-09-29T06:29:44Z" finished-at="2018-09-29T06:29:46Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="2062" started-at="2018-09-29T06:29:44Z" finished-at="2018-09-29T06:29:46Z">
+      <class name="apicalls.JiraAPIAutomation">
+        <test-method status="PASS" signature="loginJira()[pri:1, instance:apicalls.JiraAPIAutomation@6767c1fc]" name="loginJira" duration-ms="1752" started-at="2018-09-29T06:29:44Z" finished-at="2018-09-29T06:29:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginJira -->
+        <test-method status="PASS" signature="createIssue()[pri:2, instance:apicalls.JiraAPIAutomation@6767c1fc]" name="createIssue" duration-ms="280" started-at="2018-09-29T06:29:46Z" finished-at="2018-09-29T06:29:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createIssue -->
+        <test-method status="PASS" signature="addComment()[pri:3, instance:apicalls.JiraAPIAutomation@6767c1fc]" name="addComment" duration-ms="2" started-at="2018-09-29T06:29:46Z" finished-at="2018-09-29T06:29:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addComment -->
+        <test-method status="PASS" signature="updateComment()[pri:4, instance:apicalls.JiraAPIAutomation@6767c1fc]" name="updateComment" duration-ms="1" started-at="2018-09-29T06:29:46Z" finished-at="2018-09-29T06:29:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateComment -->
+      </class> <!-- apicalls.JiraAPIAutomation -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
