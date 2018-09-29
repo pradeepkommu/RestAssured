@@ -1,15 +1,12 @@
 package apicalls;
 
 import org.testng.annotations.Test;
-import org.testng.annotations.Test;
-
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.*;
-
 import static io.restassured.RestAssured.*;
 
 public class JiraAPIAutomation {
-	
+
 	String sessionID;
 	String jiraID;
 
@@ -59,7 +56,7 @@ public class JiraAPIAutomation {
 		System.out.println("Current ID & Key "+jiraID +"-"+key);
 
 	}
-	
+
 	@Test(priority=3)
 	public void addComment() {
 		baseURI="http://localhost:8080";
@@ -80,7 +77,7 @@ public class JiraAPIAutomation {
 		String r=res.asString();
 		JsonPath jsonFormate=new JsonPath(r);
 		jiraID=jsonFormate.get("id");
-		System.out.println("Current ID "+jiraID);
+		System.out.println("Comment ID "+jiraID);
 	}
 	@Test(priority=4)
 	public void updateComment() {
