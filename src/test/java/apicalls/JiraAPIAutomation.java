@@ -1,16 +1,18 @@
 package apicalls;
 
-import org.testng.annotations.Test;
+
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.*;
 import static io.restassured.RestAssured.*;
+
+import org.testng.annotations.Test;
 
 public class JiraAPIAutomation {
 
 	String sessionID;
 	String jiraID;
 
-	@Test(priority=1)
+	@Test
 	public void loginJira() {
 		baseURI="http://localhost:8080";
 		Response res =given().log().ifValidationFails().
