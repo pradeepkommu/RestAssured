@@ -35,7 +35,7 @@ public class genericFunctions {
 		String r=res.asString();
 		JsonPath js= new JsonPath(r);
 		access_token=js.get("access_token");
-		System.out.println(access_token);
+		//System.out.println(access_token);
 		return access_token;
 	}
 	
