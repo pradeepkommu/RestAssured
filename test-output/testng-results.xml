@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="6358" started-at="2018-09-30T12:48:01Z" finished-at="2018-09-30T12:48:08Z">
+  <suite name="Default suite" duration-ms="1863" started-at="2018-09-30T13:40:46Z" finished-at="2018-09-30T13:40:48Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="6358" started-at="2018-09-30T12:48:01Z" finished-at="2018-09-30T12:48:08Z">
+    <test name="Default test" duration-ms="1863" started-at="2018-09-30T13:40:46Z" finished-at="2018-09-30T13:40:48Z">
       <class name="apicalls.OO">
-        <test-method status="PASS" signature="TransportLeg()[pri:1, instance:apicalls.OO@5c7fa833]" name="TransportLeg" duration-ms="6317" started-at="2018-09-30T12:48:01Z" finished-at="2018-09-30T12:48:08Z">
+        <test-method status="PASS" signature="getToken()[pri:0, instance:apicalls.OO@2b98378d]" name="getToken" is-config="true" duration-ms="2983" started-at="2018-09-30T13:40:43Z" finished-at="2018-09-30T13:40:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getToken -->
+        <test-method status="PASS" signature="TransportLeg()[pri:1, instance:apicalls.OO@2b98378d]" name="TransportLeg" duration-ms="983" started-at="2018-09-30T13:40:46Z" finished-at="2018-09-30T13:40:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TransportLeg -->
+        <test-method status="PASS" signature="ListCitiesinCountry()[pri:2, instance:apicalls.OO@2b98378d]" name="ListCitiesinCountry" duration-ms="854" started-at="2018-09-30T13:40:47Z" finished-at="2018-09-30T13:40:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ListCitiesinCountry -->
       </class> <!-- apicalls.OO -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
