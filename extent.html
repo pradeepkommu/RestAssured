@@ -1,0 +1,460 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/b4a58fcfd1e137bd9287244035a7c80d3d73b3af/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>ExtentReports</title>
+
+	<style type='text/css'>
+	</style>
+</head>
+
+	<body class='extent standard default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>ExtentReports</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Oct 7, 2018 04:40:19 PM</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>3.1.5</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='75%'><span class='strong'>3</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='25%'>1</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='23.077%'><span class='strong'>3</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='7.692%'>1</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='69.231%'>9</span> others
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Tests</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>TransportLeg</span>
+						<span class='test-time'>Oct 7, 2018 04:40:22 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Oct 7, 2018 04:40:22 PM</span>
+	<span class='label end-time'>Oct 7, 2018 04:40:23 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+619ms</span>
+</div>
+	<div class='test-desc'>To List all the Flights Between DXB-BOM </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:40:22 PM</td>
+					<td class='step-details'>Bearer Token Passed:eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX3R5cGUiOiJTVERSRCIsInVzZXJfaWQiOjEyNjk1MCwidXNlcl9uYW1lIjoiUFJBREVFUCIsInNjb3BlIjpbIm9wZW5pZCIsInJlYWQiLCJ3cml0ZSJdLCJuYW1lIjoiUFJBREVFUCIsInNlc3Npb25faWQiOiIxNTM5MzExNTEwODk4LjAuMjk4MDI3NjE0ODUxODA4MDYiLCJleHAiOjE1MzkxNTU5NDYsImF1dGhvcml0aWVzIjpbIkNIQU5HRV9VTklUUyIsIkVYUE9SVF9GTElHSFRfT1BTIiwiRVZMX1ZJRVdfQUxOX1JTTiIsIlNIQ19NT0RJRlkiLCJERUxFVEVfSVRJTkVSQVJZX0FGVEVSX0FSUiIsIkRHRF9FWENTX1NBVkUiLCJVUERBVEVfQk9PS0lOR19QUklPUklUWSIsIkVWTF9WSUVXX1JBVElEX1JHRSIsIlRSTlNUX1BFUk1fT1ZSIiwiSUdOT1JFX01WVF9TVFNfRk9SX1JFU19BTUVORCIsIkVWTF9SRVFfQkxXX0hSRF9SQVQiLCJBTE9UX0FQUlZfU1ROIiwiQ05FRV9BQ1BUX09WUiIsIk9WRVJSSURFX0lNUF9BV0JfREFUQSIsIlNIQ19ERUxFVEUiLCJTS1lQT1VDSF9ERUxFVEUiLCJBTURfREFUQV9SQ1MiLCJCT09LSU5HX0NCViIsIkFNRF9EQVRBX0ZMVF9DTE9TRUQiLCJSRU1PVkVfSVROUllfQ0FPIiwiQktOR19TVEFUVVNfQ0hORyIsIlZJRVdfSElERV9CTE9DSyIsIkdSUF9SRUJPT0siLCJPVlJfVUxEX0NPTVBBVCIsIkFMTE9XX1BSSU5UX0JBUkNPREVfQkVGT1JFX1JDUyIsIkNBTkNFTF9CT09LSU5HIiwiU0hDX0NSRUFURSIsIkdFVF9ORVhUX0FXQiIsIkxJVkVfQU5NTF9PVlIiLCJPVlJfTUNUX0NIRUNLIiwiREdEX0VYQ1NfQVBSVkwiLCJFWFBPUlRfU0hJUF9PUFIiLCJSRVNfT05MX0FNRU5EIiwiQUxMT1dfQ1VCSVNDQU5fUVRZX1VQREFURSJdLCJqdGkiOiIwMDYxNmEwNS1jYmYwLTQ4YmMtODg5MS1kNDM3ZDczMDhlOTciLCJjbGllbnRfaWQiOiJtZXJjYXRvciIsInRlbmFudF9jb2RlIjoiWFgiLCJkZWZhdWx0X3N0YXRpb24iOiJEWEIifQ.BHK7qqNYDHskBf1_0zFJJJ4WjXZI_TER15J3OCyl_HRrpxAZuMGh-gn3xTc8wezbMP3eRxsHxwa94MJ6G4nabtQWNmnHqoqNNE6FIV-rPsoHLe3iF_WpVDEFWVSOHFF1h27_8OHUmZy-sZ9e7pRXTJ5ImErKOz5WOd-KDD_ed2Vs33YOZa1rydZN9Q1M8fX32RuKWRlTIcIOYX6h_-wpT0T9mVYxgWpObTgPkb2z9PN7S9PfdmoWIbs2xqUH4TD6ujKJt0Q9dRTlZsvMOWOg_5UmR7mbiS16H_KM0BzJJZIeWONaM4SR3zlB3rM3gxnRedkXmtsRWfgu2mG9DiJDHQ</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:40:22 PM</td>
+					<td class='step-details'>Base URL:http://10.4.11.108:8191/services/transport/details</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:40:23 PM</td>
+					<td class='step-details'>Response from the Server : X-Application-Context=order:qa:8191
+X-Content-Type-Options=nosniff
+X-XSS-Protection=1; mode=block
+Cache-Control=no-cache, no-store, max-age=0, must-revalidate
+Pragma=no-cache
+Expires=0
+X-Frame-Options=DENY
+Content-Type=application/json;charset=UTF-8
+Transfer-Encoding=chunked
+Date=Sun, 07 Oct 2018 12:39:09 GMT</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:40:23 PM</td>
+					<td class='step-details'>Response from the Server : {"data":{"page":{"pageNumber":1,"pageSize":10,"totalCount":125},"list":[{"transportLegSummary":{"transportLegs":[{"departureDateTime":{"schedule":"2018-08-15 11:30:00"},"arrivalDateTime":{"schedule":"2018-08-15 15:00:00"},"carrier":"XX","transportNumber":"1304","date":"2018-08-15 11:30:00","brdPoint":"DXB","offPoint":"BOM"}]},"routing":"DXB-BOM","carrier":"XX","transportNumber":"1304","date":"2018-08-15 11:30:00"},{"transportLegSummary":{"transportLegs":[{"departureDateTime":{"schedule":"2018-08-15 21:30:00"},"arrivalDateTime":{"schedule":"2018-08-16 01:30:00"},"carrier":"XX","transportNumber":"3010","date":"2018-08-15 21:30:00","brdPoint":"DXB","offPoint":"BOM"}]},"routing":"DXB-BOM","carrier":"XX","transportNumber":"3010","date":"2018-08-15 21:30:00"},{"transportLegSummary":{"transportLegs":[{"departureDateTime":{"schedule":"2018-08-15 23:20:00"},"arrivalDateTime":{"schedule":"2018-08-16 02:00:00"},"carrier":"XX","transportNumber":"2001","date":"2018-08-15 23:20:00","brdPoint":"DXB","offPoint":"BOM"}]},"routing":"DXB-BOM","carrier":"XX","transportNumber":"2001","date":"2018-08-15 23:20:00"},{"transportLegSummary":{"transportLegs":[{"departureDateTime":{"schedule":"2018-08-15 14:00:00"},"arrivalDateTime":{"schedule":"2018-08-17 18:30:00"},"carrier":"XX","transportNumber":"4768","date":"2018-08-15 14:00:00","brdPoint":"DXB","offPoint":"BOM"}]},"routing":"DXB-BOM","carrier":"XX","transportNumber":"4768","date":"2018-08-15 14:00:00"},{"transportLegSummary":{"transportLegs":[{"departureDateTime":{"schedule":"2018-08-15 07:00:00"},"arrivalDateTime":{"schedule":"2018-08-15 12:30:00"},"carrier":"XX","transportNumber":"5678","date":"2018-08-15 07:00:00","brdPoint":"DXB","offPoint":"BOM"}]},"routing":"DXB-BOM","carrier":"XX","transportNumber":"5678","date":"2018-08-15 07:00:00"},{"transportLegSummary":{"transportLegs":[{"departureDateTime":{"schedule":"2018-08-15 19:01:00"},"arrivalDateTime":{"schedule":"2018-08-16 21:01:00"},"carrier":"XX","transportNumber":"1143","date":"2018-08-15 19:01:00","brdPoint":"DXB","offPoint":"BOM"}]},"routing":"DXB-BOM","carrier":"XX","transportNumber":"1143","date":"2018-08-15 19:01:00"},{"transportLegSummary":{"transportLegs":[{"departureDateTime":{"schedule":"2018-08-15 05:00:00"},"arrivalDateTime":{"schedule":"2018-08-15 09:30:00"},"carrier":"XX","transportNumber":"5465","date":"2018-08-15 05:00:00","brdPoint":"DXB","offPoint":"BOM"}]},"routing":"DXB-BOM","carrier":"XX","transportNumber":"5465","date":"2018-08-15 05:00:00"},{"transportLegSummary":{"transportLegs":[{"departureDateTime":{"schedule":"2018-08-15 08:00:00"},"arrivalDateTime":{"schedule":"2018-08-15 11:00:00"},"carrier":"XX","transportNumber":"9999","extensionNumber":"A","date":"2018-08-15 08:00:00","brdPoint":"DXB","offPoint":"BOM"}]},"routing":"DXB-BOM","carrier":"XX","transportNumber":"9999","extensionNumber":"A","date":"2018-08-15 08:00:00"},{"transportLegSummary":{"transportLegs":[{"departureDateTime":{"schedule":"2018-08-15 06:01:00"},"arrivalDateTime":{"schedule":"2018-08-15 09:30:00"},"carrier":"XX","transportNumber":"1977","date":"2018-08-15 06:01:00","brdPoint":"DXB","offPoint":"BOM"}]},"routing":"DXB-BOM","carrier":"XX","transportNumber":"1977","date":"2018-08-15 06:01:00"},{"transportLegSummary":{"transportLegs":[{"departureDateTime":{"schedule":"2018-08-15 03:00:00"},"arrivalDateTime":{"schedule":"2018-08-15 09:00:00"},"carrier":"XX","transportNumber":"5636","date":"2018-08-15 03:00:00","brdPoint":"DXB","offPoint":"BOM"}]},"routing":"DXB-BOM","carrier":"XX","transportNumber":"5636","date":"2018-08-15 03:00:00"}]},"status":"success"}</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:40:23 PM</td>
+					<td class='step-details'>Asserion passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>ListCitiesinCountry</span>
+						<span class='test-time'>Oct 7, 2018 04:40:24 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Oct 7, 2018 04:40:24 PM</span>
+	<span class='label end-time'>Oct 7, 2018 04:40:24 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+719ms</span>
+</div>
+	<div class='test-desc'>Sample description </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:40:24 PM</td>
+					<td class='step-details'>Request URL: http://10.4.11.108:8020/services/reference-data/geography/countries/AE</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:40:24 PM</td>
+					<td class='step-details'>Response from the Server : {"data":{"list":[{"code":"AE","numericCode":"784","name":"UNITED ARAB EMIRATES","currencyCode":"AED","subArea":"2.3","secondaryCurrencies":["AED","PGK"],"states":[{"code":"232","name":"3323"},{"code":"ABC","name":"Hi 123456789123456789123456789123456789123456789123456789"},{"code":"ABD","name":"Abu Dhabi"},{"code":"SHJ","name":"Sharjah"},{"code":"AIN","name":"Al Ain"},{"code":"UAQ","name":"Umm Al Qawwain"},{"code":"RAK","name":"Ras Al Khaimah"},{"code":"KAR"},{"code":"FUJ","name":"Fujairah"},{"code":"DXB","name":"Dubai"},{"code":"MCT","name":"MCT"}],"regionCode":"2","currencies":[{"code":"AED","primary":true},{"code":"AED","primary":false},{"code":"PGK","primary":false}]}]},"status":"success"}</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:40:24 PM</td>
+					<td class='step-details'>Asserion passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>Carrier</span>
+						<span class='test-time'>Oct 7, 2018 04:40:24 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Oct 7, 2018 04:40:24 PM</span>
+	<span class='label end-time'>Oct 7, 2018 04:40:25 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+690ms</span>
+</div>
+	<div class='test-desc'>Details of Carrier </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:40:24 PM</td>
+					<td class='step-details'>Request URL: http://10.4.11.108:8020/services/reference-data/carriers/EK</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:40:25 PM</td>
+					<td class='step-details'>Response from the Server : {"data":{"list":[{"code":"EK","name":"Emirates Airline","prefix":"176","controlledDuplicate":false,"cargoOnly":false,"sita":true,"iataMember":true,"iataAssociatedMember":false,"calendar":{"finacialStartMonth":"APR","calendarStartMonth":"JAN"},"icaocode":"UAE","hdqstation":{"code":"DXB","name":"Dubai","country":{"countryCode":"AE","countryName":"UNITED ARAB EMIRATES"}}}]},"status":"success"}</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:40:25 PM</td>
+					<td class='step-details'>Asserion passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='4'>
+					<div class='test-heading'>
+						<span class='test-name'>offer Search</span>
+						<span class='test-time'>Oct 7, 2018 04:40:25 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Oct 7, 2018 04:40:25 PM</span>
+	<span class='label end-time'>Oct 7, 2018 04:40:26 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+498ms</span>
+</div>
+	<div class='test-desc'>Find offer service </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:40:25 PM</td>
+					<td class='step-details'>Request URL: http://10.4.11.108:8093/services/cargo/offers</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>4:40:26 PM</td>
+					<td class='step-details'>Assertion failed (Response,java.lang.AssertionError: 1 expectation failed.
+Expected status code <200> but was <505>.
+)</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<!-- category view -->
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>4</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>13</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Oct 7, 2018 04:40:19 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Oct 7, 2018 04:40:26 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 0m 6s+583ms</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 3,
+				failParent: 1,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 1,
+				
+				passChild: 3,
+				failChild: 1,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 9,
+				exceptionsChild: 1,
+				
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 		</script>
+	</body>
+	
+</html>

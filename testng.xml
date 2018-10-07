@@ -3,6 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
+      <class name="apicalls.OO"/>
       <class name="apicalls.JiraAPIAutomation"/>
     </classes>
   </test> <!-- Test -->

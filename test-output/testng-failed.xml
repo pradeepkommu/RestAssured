@@ -5,7 +5,8 @@
     <classes>
       <class name="apicalls.OO">
         <methods>
-          <include name="TransportLeg"/>
+          <include name="offerSearch"/>
+          <include name="getToken"/>
         </methods>
       </class> <!-- apicalls.OO -->
     </classes>
